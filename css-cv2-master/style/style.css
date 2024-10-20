@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding:40px 20%;
+    font-size:0.9em;
+}
+
+hgroup >h1{
+    border-bottom:1px solid darkgray;
+    padding-bottom:30px;
+}
+hgroup>h2{
+    display: none;
+}
+header > div figure {
+    transform: rotate(-15deg) scale(1.7);
+    position: absolute;
+    top: 100px; 
+    right: calc(20% + 50px);
+}
+#about h3{
+    display:none;
+}
+#about p{
+    color:darkgray;
+    font-style: italic;
+ width: calc(90% - (20% + 50px));
+ 
+ text-align: justify;
+
+}
+
+
+.content > section:not(#about){
+   
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+
+}
+.content h3{
+    grid-column:1;
+    font-style:italic;
+  
+}
+
+.content div , .content #hobbies > ul {
+    grid-column: 2;
+    padding-left:10px;
+    border-left:2px solid black; 
+    
+}
+
+.content #hobbies > ul{
+    padding-left:40px;
+    padding-bottom:40px;
+}
+.content div > * , .content .contacts{
+    border-left:none;
+}
+.experience-type{
+    color:darkcyan;
+    float:left;
+}
+section{
+    margin-top:50px;
+}
+.experience-institution{
+    display:none;
+}
+.experience-details{
+display:flex;
+justify-content: flex-end;
+gap: 10px;
+color:gray;
+margin-bottom:40px;
+
+
+} .skills {
+    display: flex;
+    gap: 10px;
+    width: 500px;
+}
+
+.skills .skill {
+    background-color: darkcyan;
+    margin-bottom: 10px;
+    width: 60%;
+    
+    color: white;
+    padding: 10px;
+    
+}
+.skills .skill>span{
+    display: flex; 
+    justify-content: space-between; 
+}
+.skills-primary .skill > span {
+    font-size: 1.5em;
+ 
+}
+
+.skills-secondary .skill > span {
+    font-size: 0.8em;
+}
+
+.skill[data-skill="5"] span::after {
+    content: '★★★';
+}
+
+.skill[data-skill="3"] span::after {
+    content: '★★';
+}
+
+.skill[data-skill="9"] span::after {
+    content: '★★★★★'; 
+}
+
+.skill[data-skill="1"] span::after {
+    content: '★'; 
+}
+
+.skill[data-skill="7"] span::after {
+    content: '★★★★'; 
+}.contacts {
+    width: 500px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.contacts .contact {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+}
+
+.contacts .contact-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+}
+
+.contacts .contact-value a {
+    display: block; 
+    width: 100%;
+    height: 100%;
+    color: transparent; 
+}
+
+.contacts .contact-email {
+    background-image: url("../images/email.png");
+}
+
+.contacts .contact-facebook {
+    background-image: url("../images/facebook.png");
+}
+
+.contacts .contact-github {
+    background-image: url("../images/github.png");
+}
+
+.contacts .contact-phone {
+    background-image: url("../images/phone.png");
+}
+
+.contact-type,
+#contact > h3,
+.contact-skype {
+    display: none; }
+
+
+
+@media only screen and (max-width: 767px) {
+    header > div figure {
+        display: none; 
+
+    }
+    #about p{
+        
+width:100%;
+    }
+    .content > section:not(#about){
+        display:flex;
+flex-direction: column;    }
+    
+.content h3{
+   width:40%;
+    border-bottom:2px solid black; 
+}
+
+.content div , .content #hobbies > ul {
+   width:auto;
+  padding:0;
+    border-left:none; 
+    
+}
+}
